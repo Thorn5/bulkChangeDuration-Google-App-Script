@@ -1,6 +1,8 @@
 function bulkChangeDuration() {
   // Get the calendar by ID.
-  var calendar = CalendarApp.getCalendarById(${{secrets.CALENDAR_ID}});
+  var calendarId = PropertiesService.getScriptProperties().getProperty('CALENDAR_ID');
+  // Logger.log('calendarId: ' + calendarId);
+  var calendar = CalendarApp.getCalendarById(calendarId);
 
   // Display the calendar name on the event log.
   // Logger.log('Calendar name: ' + calendar.getName());
